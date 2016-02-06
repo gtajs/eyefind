@@ -1,0 +1,38 @@
+$yellow: #FFEB3B;
+$blue: #2196F3;
+$dark-blue: #1565C0;
+
+html,
+body {
+	height: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;	
+}
+
+body {
+	header {
+		border-bottom: 10px solid $yellow;
+		background-color: $blue;
+		color: white;
+		height: 200px;
+		h1 {
+			font-family: 'Pacifico';
+			text-transform: lowercase;
+			text-shadow: 5px 2px 0px $dark-blue;
+			font-size: 48pt;
+		}
+		span {
+			color: $yellow;
+		}
+	}
+	nav {
+		ul {
+			li {
+				display: inline;
+			}
+		}
+	}
+}
