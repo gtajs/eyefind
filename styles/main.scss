@@ -4,6 +4,7 @@
 $yellow: #FFEB3B;
 $blue: #2196F3;
 $dark-blue: #1565C0;
+$light-blue: #90CAF9;
 
 html,
 body {
@@ -13,6 +14,7 @@ body {
 * {
 	margin: 0;
 	padding: 0;	
+	font-family: 'Roboto';
 }
 
 body {
@@ -20,39 +22,70 @@ body {
 		border-bottom: 10px solid $yellow;
 		background-color: $blue;
 		color: white;
-		height: 200px;
-		#container {
+		min-height: 200px;
+		.container {
 			@include outer-container;
+			display: flex;
+			display: -ms-flex;
+			display: -webkit-flex;
+			align-items: center;
 			h1 {
 				font-family: 'Pacifico';
 				text-transform: lowercase;
 				text-shadow: 5px 2px 0px $dark-blue;
 				font-size: 48pt;
+				@include span-columns(8);
+				span {
+					color: $yellow;
+					font-family: 'Pacifico';
+				}
 			}
-			span {
-				color: $yellow;
+			#information {
+				@include span-columns(4);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				p {
+					font-family: 'Helvetica';
+					padding: 10px;
+					border-right: solid 2px white;
+				}
+				img {
+					padding-left: 10px;
+				}
+			}
+			input {
+				width: 100%;
+				outline: none;
+				border-radius: 5px;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				display: block;
+				border: none;
+				margin: 20px 0px 0px;
+				font-size: 12pt;
+				padding: 5px;
 			}
 		}
 	}
 	ul {
 		background-color: #efefef;
-		border-bottom: 2px $dark-blue solid;
-		padding-bottom: 20px;
-		min-height: 75px;
+		min-height: 60px;
 		display: flex;
 		display: -ms-flex;
 		display: -webkit-flex;
 		justify-content: center;
 		align-items: center;
 		flex-wrap: wrap;
+		border-bottom: 1px grey solid;
 		li {
 			list-style: none;
-			border-right: solid 1px $blue;
-			margin: 20px 0px 0px;
+			height: 100%;
 			a {
 				color: black;
 				text-decoration: none;
-				margin: 0px 25px;
+				border-right: 1px grey solid;
+				padding: 0px 25px;
 				font-family: 'Roboto';
 				display: flex;
 				display: -ms-flex;
@@ -66,7 +99,31 @@ body {
 			}
 		}
 		li:last-child {
-			border-right: none;
+			a {
+				border-right: none;
+			}
+		}
+	}
+	main {
+		.container {
+			@include outer-container;
+			margin-top: 10px;
+			#left {
+				@include span-columns(7);
+				div {
+					background-color: #efefef;
+					margin: 10px 0px;
+					padding: 10px;
+				}
+			}
+			#right {
+				@include span-columns(5);
+				div {
+					background-color: #efefef;
+					margin: 10px 0px;
+					padding: 10px;
+				}
+			}
 		}
 	}
 }
