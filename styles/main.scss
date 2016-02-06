@@ -1,3 +1,6 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
 $yellow: #FFEB3B;
 $blue: #2196F3;
 $dark-blue: #1565C0;
@@ -18,21 +21,49 @@ body {
 		background-color: $blue;
 		color: white;
 		height: 200px;
-		h1 {
-			font-family: 'Pacifico';
-			text-transform: lowercase;
-			text-shadow: 5px 2px 0px $dark-blue;
-			font-size: 48pt;
-		}
-		span {
-			color: $yellow;
+		#container {
+			@include outer-container;
+			h1 {
+				font-family: 'Pacifico';
+				text-transform: lowercase;
+				text-shadow: 5px 2px 0px $dark-blue;
+				font-size: 48pt;
+			}
+			span {
+				color: $yellow;
+			}
 		}
 	}
-	nav {
-		ul {
-			li {
-				display: inline;
+	ul {
+		background-color: #efefef;
+		border-bottom: 2px $dark-blue solid;
+		height: 75px;
+		display: flex;
+		display: -ms-flex;
+		display: -webkit-flex;
+		justify-content: center;
+		align-items: center;
+		li {
+			list-style: none;
+			border-right: solid 1px $blue;
+			a {
+				color: black;
+				text-decoration: none;
+				margin: 0px 25px;
+				font-family: 'Roboto';
+				display: flex;
+				display: -ms-flex;
+				display: -webkit-flex;
+				align-items: center;
+				cursor: pointer;
+				i {
+					margin-right: 10px;
+					color: $blue;
+				}
 			}
+		}
+		li:last-child {
+			border-right: none;
 		}
 	}
 }

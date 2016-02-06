@@ -1,3 +1,9 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
 html,
 body {
   height: 100%; }
@@ -11,14 +17,47 @@ body header {
   background-color: #2196F3;
   color: white;
   height: 200px; }
-  body header h1 {
-    font-family: 'Pacifico';
-    text-transform: lowercase;
-    text-shadow: 5px 2px 0px #1565C0;
-    font-size: 48pt; }
-  body header span {
-    color: #FFEB3B; }
-body nav ul li {
-  display: inline; }
+  body header #container {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    body header #container::after {
+      clear: both;
+      content: "";
+      display: table; }
+    body header #container h1 {
+      font-family: 'Pacifico';
+      text-transform: lowercase;
+      text-shadow: 5px 2px 0px #1565C0;
+      font-size: 48pt; }
+    body header #container span {
+      color: #FFEB3B; }
+body ul {
+  background-color: #efefef;
+  border-bottom: 2px #1565C0 solid;
+  height: 75px;
+  display: flex;
+  display: -ms-flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center; }
+  body ul li {
+    list-style: none;
+    border-right: solid 1px #2196F3; }
+    body ul li a {
+      color: black;
+      text-decoration: none;
+      margin: 0px 25px;
+      font-family: 'Roboto';
+      display: flex;
+      display: -ms-flex;
+      display: -webkit-flex;
+      align-items: center;
+      cursor: pointer; }
+      body ul li a i {
+        margin-right: 10px;
+        color: #2196F3; }
+  body ul li:last-child {
+    border-right: none; }
 
 /*# sourceMappingURL=main.css.map */
